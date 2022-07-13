@@ -11,7 +11,7 @@ COPY src src
 RUN mvn package -Dmaven.test.skip=true
 
 FROM openjdk:11-jdk
-COPY --from=0 /target/listenerTrasmision-1.0.jar /app/target/listenerTrasmision-1.0.jar
+COPY --from=0 /build/target/listenerTrasmision-1.0.jar /app/target/listenerTrasmision-1.0.jar
 
 EXPOSE 8081
 ENTRYPOINT [ "java", "-jar", "/app/target/listenerTrasmision-1.0.jar", "--server.port=8784" ]
