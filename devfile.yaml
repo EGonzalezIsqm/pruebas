@@ -1,23 +1,22 @@
 schemaVersion: 2.2.0
 metadata:
-  name: java-springboot
+  name: listener-trasmision
   version: 1.1.0
   attributes:
-    alpha.dockerimage-port: 8081
-  displayName: Java Spring Boot
-  description: Java Spring Boot using Maven
+    alpha.dockerimage-port: 8784
+  displayName: listener-trasmision
+  description: listener-trasmision
   tags: ["Java", "Spring"]
   projectType: "springboot"
   language: "java"
   provider: Red Hat
-  supportUrl: https://github.com/devfile-samples/devfile-support#support-information
 parent:
   id: java-springboot
   registryUrl: "https://registry.devfile.io"
 components:
   - name: outerloop-build
     image:
-      imageName: java-springboot-image:latest
+      imageName: listener-trasmision-image:latest
       dockerfile:
         uri: docker/Dockerfile
         buildContext: .
@@ -29,7 +28,7 @@ components:
       deployment/cpuRequest: 10m
       deployment/memoryLimit: 300Mi
       deployment/memoryRequest: 180Mi
-      deployment/container-port: 8081
+      deployment/container-port: 8784
     kubernetes:
       uri: outerloop-deploy.yaml
 commands:

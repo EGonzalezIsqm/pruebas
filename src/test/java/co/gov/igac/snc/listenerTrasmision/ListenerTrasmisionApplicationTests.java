@@ -1,10 +1,10 @@
-package com.example.demo;
+package co.gov.igac.snc.listenerTrasmision;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class ListenerTrasmisionApplicationTests {
 
 	@Test
 	void contextLoads() {
